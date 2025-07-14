@@ -96,9 +96,59 @@ const blogPosts: BlogPost[] = [
     date: '2024-01-12',
     readTime: '4 min read',
     category: 'Car Comparison',
-    image: 'https://images.unsplash.com/photo-1593941707882-a5bac6861d75?w=800&h=600&fit=crop'
+    image: 'https://images.unsplash.com/photo-1617788138017-80ad40651399?w=800&h=600&fit=crop'
   },
-  // Add more blog posts with full content as needed...
+  {
+    id: '3',
+    title: 'Top 10 Road Trip Destinations for 2024',
+    excerpt: 'Discover the most scenic and exciting road trip destinations that are perfect for your next rental car adventure.',
+    content: `
+      <h2>Planning Your Perfect Road Trip</h2>
+      <p>Road trips offer the ultimate freedom to explore at your own pace. Here are the top destinations that promise unforgettable experiences.</p>
+      
+      <h2>Top Destinations</h2>
+      <ul>
+        <li><strong>Pacific Coast Highway, California:</strong> Stunning coastal views and charming seaside towns</li>
+        <li><strong>Blue Ridge Parkway, Virginia/North Carolina:</strong> Spectacular mountain scenery and fall foliage</li>
+        <li><strong>Route 66:</strong> The classic American road trip experience</li>
+        <li><strong>Great Ocean Road, Australia:</strong> Dramatic coastline and unique rock formations</li>
+        <li><strong>Ring Road, Iceland:</strong> Otherworldly landscapes and natural wonders</li>
+      </ul>
+      
+      <h2>Planning Tips</h2>
+      <p>Make the most of your road trip with proper planning and preparation.</p>
+    `,
+    author: 'Mike Davis',
+    date: '2024-01-10',
+    readTime: '6 min read',
+    category: 'Travel',
+    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop'
+  },
+  {
+    id: '4',
+    title: 'How to Save Money on Car Rentals',
+    excerpt: 'Practical tips and strategies to get the best deals on car rentals without compromising on quality.',
+    content: `
+      <h2>Smart Booking Strategies</h2>
+      <p>Saving money on car rentals doesn't mean sacrificing quality. Here are proven strategies to get the best deals.</p>
+      
+      <h2>Timing is Everything</h2>
+      <ul>
+        <li>Book in advance for better rates</li>
+        <li>Avoid peak travel seasons when possible</li>
+        <li>Consider weekday vs weekend pricing</li>
+        <li>Be flexible with pickup and drop-off times</li>
+      </ul>
+      
+      <h2>Comparison Shopping</h2>
+      <p>Use multiple platforms to compare prices and find hidden deals.</p>
+    `,
+    author: 'Emily Chen',
+    date: '2024-01-08',
+    readTime: '3 min read',
+    category: 'Money Saving',
+    image: 'https://images.unsplash.com/photo-1579952363873-27d3bfad9c0d?w=800&h=600&fit=crop'
+  }
 ];
 
 export default function BlogPost() {

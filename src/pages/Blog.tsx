@@ -37,7 +37,7 @@ const blogPosts: BlogPost[] = [
     date: '2024-01-12',
     readTime: '4 min read',
     category: 'Car Comparison',
-    image: 'https://images.unsplash.com/photo-1593941707882-a5bac6861d75?w=600&h=400&fit=crop'
+    image: 'https://images.unsplash.com/photo-1617788138017-80ad40651399?w=600&h=400&fit=crop'
   },
   {
     id: '3',
@@ -59,7 +59,7 @@ const blogPosts: BlogPost[] = [
     date: '2024-01-08',
     readTime: '3 min read',
     category: 'Money Saving',
-    image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=600&h=400&fit=crop'
+    image: 'https://images.unsplash.com/photo-1579952363873-27d3bfad9c0d?w=600&h=400&fit=crop'
   },
   {
     id: '5',
@@ -81,7 +81,7 @@ const blogPosts: BlogPost[] = [
     date: '2024-01-03',
     readTime: '5 min read',
     category: 'Luxury',
-    image: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?w=600&h=400&fit=crop'
+    image: 'https://images.unsplash.com/photo-1563720223185-11003d516935?w=600&h=400&fit=crop'
   },
   {
     id: '7',
@@ -103,7 +103,7 @@ const blogPosts: BlogPost[] = [
     date: '2023-12-28',
     readTime: '6 min read',
     category: 'Safety',
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop'
+    image: 'https://images.unsplash.com/photo-1609630875171-b1321377ee65?w=600&h=400&fit=crop'
   },
   {
     id: '9',
@@ -125,7 +125,7 @@ const blogPosts: BlogPost[] = [
     date: '2023-12-22',
     readTime: '4 min read',
     category: 'Business Travel',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop'
+    image: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&h=400&fit=crop'
   },
   {
     id: '11',
@@ -136,7 +136,7 @@ const blogPosts: BlogPost[] = [
     date: '2023-12-20',
     readTime: '5 min read',
     category: 'Environment',
-    image: 'https://images.unsplash.com/photo-1617788138017-80ad40651399?w=600&h=400&fit=crop'
+    image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=400&fit=crop'
   },
   {
     id: '12',
@@ -147,7 +147,73 @@ const blogPosts: BlogPost[] = [
     date: '2023-12-18',
     readTime: '8 min read',
     category: 'International Travel',
-    image: 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=600&h=400&fit=crop'
+    image: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=600&h=400&fit=crop'
+  },
+  {
+    id: '13',
+    title: 'Car Rental Apps: The Future of Mobility',
+    excerpt: 'Discover how mobile apps are revolutionizing the car rental experience with seamless booking and keyless entry.',
+    content: '',
+    author: 'Tech Reviewer',
+    date: '2023-12-15',
+    readTime: '4 min read',
+    category: 'Technology',
+    image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&h=400&fit=crop'
+  },
+  {
+    id: '14',
+    title: 'Convertible Car Rentals: Summer Driving Guide',
+    excerpt: 'Make the most of your summer vacation with a convertible rental car and experience open-air driving.',
+    content: '',
+    author: 'Summer Explorer',
+    date: '2023-12-12',
+    readTime: '5 min read',
+    category: 'Seasonal',
+    image: 'https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=600&h=400&fit=crop'
+  },
+  {
+    id: '15',
+    title: 'SUV vs Sedan: Which Rental is Right for You?',
+    excerpt: 'Compare SUVs and sedans to determine which vehicle type best suits your travel needs and preferences.',
+    content: '',
+    author: 'Vehicle Expert',
+    date: '2023-12-10',
+    readTime: '6 min read',
+    category: 'Vehicle Comparison',
+    image: 'https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=600&h=400&fit=crop'
+  },
+  {
+    id: '16',
+    title: 'Car Rental Loyalty Programs: Maximize Your Benefits',
+    excerpt: 'Learn how to leverage car rental loyalty programs to get upgrades, discounts, and exclusive perks.',
+    content: '',
+    author: 'Loyalty Expert',
+    date: '2023-12-08',
+    readTime: '4 min read',
+    category: 'Rewards',
+    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop'
+  },
+  {
+    id: '17',
+    title: 'Airport Car Rental vs City Pickup: Pros and Cons',
+    excerpt: 'Weigh the advantages and disadvantages of renting cars at airports versus city locations.',
+    content: '',
+    author: 'Travel Advisor',
+    date: '2023-12-05',
+    readTime: '5 min read',
+    category: 'Location Tips',
+    image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=600&h=400&fit=crop'
+  },
+  {
+    id: '18',
+    title: 'Vintage Car Rentals: Drive Classic Automobiles',
+    excerpt: 'Experience automotive history with vintage car rentals and make your special occasion unforgettable.',
+    content: '',
+    author: 'Classic Car Enthusiast',
+    date: '2023-12-03',
+    readTime: '6 min read',
+    category: 'Specialty',
+    image: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=600&h=400&fit=crop'
   }
 ];
 
@@ -213,42 +279,41 @@ export default function Blog() {
         {/* Regular Posts Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {regularPosts.map((post) => (
-            <article key={post.id} className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 dark:border-gray-700">
-              <div className="relative overflow-hidden">
-                <img
-                  src={post.image}
-                  alt={post.title}
-                  className="w-full h-48 object-cover hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
-                <span className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-gray-800 text-xs font-semibold px-3 py-1.5 rounded-full">
-                  {post.category}
-                </span>
-              </div>
-              <div className="p-6">
-                <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-3 leading-tight hover:text-blue-600 transition-colors duration-200">
-                  {post.title}
-                </h2>
-                <p className="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
-                  {post.excerpt}
-                </p>
-                <div className="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-4">
-                  <UserIcon className="h-4 w-4 mr-1" />
-                  <span className="mr-4 font-medium">{post.author}</span>
-                  <CalendarIcon className="h-4 w-4 mr-1" />
-                  <span className="mr-4">{new Date(post.date).toLocaleDateString()}</span>
-                  <ClockIcon className="h-4 w-4 mr-1" />
-                  <span>{post.readTime}</span>
+            <Link key={post.id} to={`/blog/${post.id}`} className="group">
+              <article className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 dark:border-gray-700 h-full">
+                <div className="relative overflow-hidden">
+                  <img
+                    src={post.image}
+                    alt={post.title}
+                    className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                  <span className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-gray-800 text-xs font-semibold px-3 py-1.5 rounded-full">
+                    {post.category}
+                  </span>
                 </div>
-                <Link
-                  to={`/blog/${post.id}`}
-                  className="inline-flex items-center text-blue-600 hover:text-blue-800 font-semibold transition-colors duration-200 group"
-                >
-                  Read More 
-                  <span className="ml-1 transform group-hover:translate-x-1 transition-transform duration-200">→</span>
-                </Link>
-              </div>
-            </article>
+                <div className="p-6 flex flex-col h-full">
+                  <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-3 leading-tight group-hover:text-blue-600 transition-colors duration-200">
+                    {post.title}
+                  </h2>
+                  <p className="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed flex-grow">
+                    {post.excerpt}
+                  </p>
+                  <div className="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-4">
+                    <UserIcon className="h-4 w-4 mr-1" />
+                    <span className="mr-4 font-medium">{post.author}</span>
+                    <CalendarIcon className="h-4 w-4 mr-1" />
+                    <span className="mr-4">{new Date(post.date).toLocaleDateString()}</span>
+                    <ClockIcon className="h-4 w-4 mr-1" />
+                    <span>{post.readTime}</span>
+                  </div>
+                  <div className="inline-flex items-center text-blue-600 group-hover:text-blue-800 font-semibold transition-colors duration-200">
+                    Read More 
+                    <span className="ml-1 transform group-hover:translate-x-1 transition-transform duration-200">→</span>
+                  </div>
+                </div>
+              </article>
+            </Link>
           ))}
         </div>
 
