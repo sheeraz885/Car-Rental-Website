@@ -82,6 +82,72 @@ const blogPosts: BlogPost[] = [
     readTime: '5 min read',
     category: 'Luxury',
     image: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?w=600&h=400&fit=crop'
+  },
+  {
+    id: '7',
+    title: 'Best Family Cars for Your Next Vacation',
+    excerpt: 'Find the perfect family-friendly rental car with safety features, space, and comfort for your vacation.',
+    content: '',
+    author: 'David Brown',
+    date: '2024-01-01',
+    readTime: '4 min read',
+    category: 'Family Travel',
+    image: 'https://images.unsplash.com/photo-1502877338535-766e1452684a?w=600&h=400&fit=crop'
+  },
+  {
+    id: '8',
+    title: 'Motorcycle Rental Safety Tips',
+    excerpt: 'Essential safety guidelines and tips for renting and riding motorcycles during your travels.',
+    content: '',
+    author: 'Alex Rodriguez',
+    date: '2023-12-28',
+    readTime: '6 min read',
+    category: 'Safety',
+    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop'
+  },
+  {
+    id: '9',
+    title: 'Winter Driving with Rental Cars',
+    excerpt: 'Important considerations and tips for renting cars during winter months and driving in snowy conditions.',
+    content: '',
+    author: 'Jennifer Lee',
+    date: '2023-12-25',
+    readTime: '5 min read',
+    category: 'Seasonal Tips',
+    image: 'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=600&h=400&fit=crop'
+  },
+  {
+    id: '10',
+    title: 'Business Travel Car Rental Guide',
+    excerpt: 'Optimize your business travel with the right rental car choices, expense management, and professional tips.',
+    content: '',
+    author: 'Michael Chang',
+    date: '2023-12-22',
+    readTime: '4 min read',
+    category: 'Business Travel',
+    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop'
+  },
+  {
+    id: '11',
+    title: 'Eco-Friendly Car Rental Options',
+    excerpt: 'Explore environmentally conscious car rental choices including hybrid and electric vehicles.',
+    content: '',
+    author: 'Emma Green',
+    date: '2023-12-20',
+    readTime: '5 min read',
+    category: 'Environment',
+    image: 'https://images.unsplash.com/photo-1617788138017-80ad40651399?w=600&h=400&fit=crop'
+  },
+  {
+    id: '12',
+    title: 'International Car Rental: What You Need to Know',
+    excerpt: 'Navigate international car rentals with confidence - licenses, insurance, and local driving laws.',
+    content: '',
+    author: 'Carlos Martinez',
+    date: '2023-12-18',
+    readTime: '8 min read',
+    category: 'International Travel',
+    image: 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=600&h=400&fit=crop'
   }
 ];
 
@@ -104,28 +170,29 @@ export default function Blog() {
         {/* Featured Post */}
         {featuredPost && (
           <div className="mb-12">
-            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+            <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <div>
+                <div className="relative overflow-hidden">
                   <img
                     src={featuredPost.image}
                     alt={featuredPost.title}
-                    className="w-full h-64 lg:h-full object-cover"
+                    className="w-full h-64 lg:h-full object-cover hover:scale-105 transition-transform duration-500"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                 </div>
-                <div className="p-8">
-                  <span className="inline-block bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full mb-4">
+                <div className="p-8 flex flex-col justify-center">
+                  <span className="inline-block bg-gradient-to-r from-blue-600 to-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full mb-4 w-fit">
                     Featured
                   </span>
-                  <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+                  <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4 leading-tight">
                     {featuredPost.title}
                   </h2>
-                  <p className="text-gray-600 dark:text-gray-400 mb-6">
+                  <p className="text-gray-600 dark:text-gray-400 mb-6 text-lg leading-relaxed">
                     {featuredPost.excerpt}
                   </p>
                   <div className="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-6">
                     <UserIcon className="h-4 w-4 mr-1" />
-                    <span className="mr-4">{featuredPost.author}</span>
+                    <span className="mr-4 font-medium">{featuredPost.author}</span>
                     <CalendarIcon className="h-4 w-4 mr-1" />
                     <span className="mr-4">{new Date(featuredPost.date).toLocaleDateString()}</span>
                     <ClockIcon className="h-4 w-4 mr-1" />
@@ -133,9 +200,9 @@ export default function Blog() {
                   </div>
                   <Link
                     to={`/blog/${featuredPost.id}`}
-                    className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors duration-200"
+                    className="inline-flex items-center px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 w-fit"
                   >
-                    Read More
+                    Read Full Article
                   </Link>
                 </div>
               </div>
@@ -146,25 +213,28 @@ export default function Blog() {
         {/* Regular Posts Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {regularPosts.map((post) => (
-            <article key={post.id} className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-              <img
-                src={post.image}
-                alt={post.title}
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-6">
-                <span className="inline-block bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200 text-xs font-medium px-2.5 py-0.5 rounded-full mb-3">
+            <article key={post.id} className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 dark:border-gray-700">
+              <div className="relative overflow-hidden">
+                <img
+                  src={post.image}
+                  alt={post.title}
+                  className="w-full h-48 object-cover hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                <span className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-gray-800 text-xs font-semibold px-3 py-1.5 rounded-full">
                   {post.category}
                 </span>
-                <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
+              </div>
+              <div className="p-6">
+                <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-3 leading-tight hover:text-blue-600 transition-colors duration-200">
                   {post.title}
                 </h2>
-                <p className="text-gray-600 dark:text-gray-400 mb-4">
+                <p className="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
                   {post.excerpt}
                 </p>
                 <div className="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-4">
                   <UserIcon className="h-4 w-4 mr-1" />
-                  <span className="mr-4">{post.author}</span>
+                  <span className="mr-4 font-medium">{post.author}</span>
                   <CalendarIcon className="h-4 w-4 mr-1" />
                   <span className="mr-4">{new Date(post.date).toLocaleDateString()}</span>
                   <ClockIcon className="h-4 w-4 mr-1" />
@@ -172,9 +242,10 @@ export default function Blog() {
                 </div>
                 <Link
                   to={`/blog/${post.id}`}
-                  className="text-blue-600 hover:text-blue-800 font-medium"
+                  className="inline-flex items-center text-blue-600 hover:text-blue-800 font-semibold transition-colors duration-200 group"
                 >
-                  Read More →
+                  Read More 
+                  <span className="ml-1 transform group-hover:translate-x-1 transition-transform duration-200">→</span>
                 </Link>
               </div>
             </article>
@@ -182,22 +253,27 @@ export default function Blog() {
         </div>
 
         {/* Newsletter Signup */}
-        <div className="mt-16 bg-blue-600 rounded-lg p-8 text-center">
-          <h2 className="text-2xl font-bold text-white mb-4">
-            Stay Updated
-          </h2>
-          <p className="text-blue-100 mb-6">
-            Subscribe to our newsletter for the latest car rental tips and travel guides
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="flex-1 px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-300"
-            />
-            <button className="px-6 py-2 bg-white text-blue-600 rounded-md hover:bg-gray-100 transition-colors duration-200 font-medium">
-              Subscribe
-            </button>
+        <div className="mt-20 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 rounded-2xl p-8 text-center relative overflow-hidden">
+          <div className="absolute inset-0 bg-black/10"></div>
+          <div className="absolute top-0 left-0 w-72 h-72 bg-white/10 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-white/5 rounded-full translate-x-1/2 translate-y-1/2"></div>
+          <div className="relative">
+            <h2 className="text-3xl font-bold text-white mb-4">
+              Stay Updated with CarRental
+            </h2>
+            <p className="text-blue-100 mb-8 text-lg max-w-2xl mx-auto">
+              Subscribe to our newsletter for the latest car rental tips, exclusive deals, and travel guides delivered straight to your inbox
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
+              <input
+                type="email"
+                placeholder="Enter your email address"
+                className="flex-1 px-6 py-3 rounded-xl focus:outline-none focus:ring-4 focus:ring-blue-300/50 text-gray-900 placeholder-gray-500"
+              />
+              <button className="px-8 py-3 bg-white text-blue-600 rounded-xl hover:bg-gray-100 transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                Subscribe Now
+              </button>
+            </div>
           </div>
         </div>
       </div>
