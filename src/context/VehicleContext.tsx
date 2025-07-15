@@ -114,8 +114,8 @@ const mockVehicles: Vehicle[] = [
     pricePerMonth: 3200,
     location: 'Los Angeles',
     images: [
-      'https://images.unsplash.com/photo-1606016159991-8b5d5c6c0e7b?w=800&h=600&fit=crop',
       'https://images.unsplash.com/photo-1555215695-3004980ad54e?w=800&h=600&fit=crop',
+      'https://images.unsplash.com/photo-1606016159991-8b5d5c6c0e7b?w=800&h=600&fit=crop',
     ],
     features: ['Leather Seats', 'Premium Sound', 'Panoramic Roof', 'Heated Seats', 'Navigation'],
     rating: 4.8,
@@ -201,8 +201,8 @@ const mockVehicles: Vehicle[] = [
     pricePerMonth: 4000,
     location: 'San Francisco',
     images: [
+      'https://images.unsplash.com/photo-1560958089-b8a1929cea89?w=800&h=600&fit=crop',
       'https://images.unsplash.com/photo-1593941707882-a5bac6861d75?w=800&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1617788138017-80ad40651399?w=800&h=600&fit=crop',
     ],
     features: ['Autopilot', 'Premium Interior', 'Supercharging', 'Glass Roof', 'Premium Audio'],
     rating: 4.9,

@@ -1,8 +1,32 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { MagnifyingGlassIcon, CalendarIcon, MapPinIcon, ChevronLeftIcon, ChevronRightIcon, StarIcon, UserIcon, ClockIcon } from '@heroicons/react/24/outline';
 import { useVehicle } from '../context/VehicleContext';
 import VehicleCard from '../components/Vehicle/VehicleCard';
+
+// Intersection Observer Hook for Scroll Animations
+const useIntersectionObserver = (options = {}) => {
+  const [isIntersecting, setIsIntersecting] = useState(false);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+      setIsIntersecting(entry.isIntersecting);
+    }, options);
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
+    };
+  }, [options]);
+
+  return [ref, isIntersecting];
+};
 
 export default function Home() {
   const { state } = useVehicle();
@@ -14,6 +38,13 @@ export default function Home() {
     endDate: '',
     vehicleType: ''
   });
+
+  // Intersection Observer refs
+  const [featuredRef, featuredVisible] = useIntersectionObserver({ threshold: 0.1 });
+  const [aboutRef, aboutVisible] = useIntersectionObserver({ threshold: 0.1 });
+  const [testimonialsRef, testimonialsVisible] = useIntersectionObserver({ threshold: 0.1 });
+  const [blogRef, blogVisible] = useIntersectionObserver({ threshold: 0.1 });
+  const [featuresRef, featuresVisible] = useIntersectionObserver({ threshold: 0.1 });
 
   const featuredVehicles = state.vehicles.slice(0, 6);
 
@@ -51,7 +82,7 @@ export default function Home() {
       location: "New York",
       rating: 5,
       comment: "Absolutely amazing service! The BMW X5 was in perfect condition and the booking process was seamless. Will definitely use CarRental again!",
-      avatar: "https://images.unsplash.com/photo-1494790108755-2616b5b98c0c?w=100&h=100&fit=crop&crop=face"
+      avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face"
     },
     {
       id: 2,
@@ -59,7 +90,7 @@ export default function Home() {
       location: "Los Angeles",
       rating: 5,
       comment: "Great selection of vehicles and competitive prices. The Tesla Model S exceeded my expectations. Highly recommended!",
-      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face"
+      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
     },
     {
       id: 3,
@@ -67,7 +98,7 @@ export default function Home() {
       location: "Miami",
       rating: 5,
       comment: "Professional service and well-maintained vehicles. The motorcycle rental was perfect for exploring the coast. Five stars!",
-      avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face"
+      avatar: "https://images.unsplash.com/photo-1494790108755-2616b5b98c0c?w=150&h=150&fit=crop&crop=face"
     },
     {
       id: 4,
@@ -75,7 +106,7 @@ export default function Home() {
       location: "Chicago",
       rating: 5,
       comment: "Excellent customer support and transparent pricing. The luxury car made our anniversary celebration extra special.",
-      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face"
+      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
     },
     {
       id: 5,
@@ -83,7 +114,7 @@ export default function Home() {
       location: "San Francisco",
       rating: 5,
       comment: "Easy booking, clean vehicles, and fair prices. The electric car was a great experience. Will book again soon!",
-      avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop&crop=face"
+      avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&crop=face"
     }
   ];
 
@@ -91,38 +122,42 @@ export default function Home() {
     {
       id: '1',
       title: 'The Future of Electric Vehicle Rentals',
-      excerpt: 'Discover how electric vehicles are revolutionizing the car rental industry.',
-      image: 'https://images.unsplash.com/photo-1593941707882-a5bac6861d75?w=400&h=300&fit=crop',
+      excerpt: 'Discover how electric vehicles are revolutionizing the car rental industry with sustainable transportation solutions.',
+      image: 'https://images.unsplash.com/photo-1560958089-b8a1929cea89?w=500&h=350&fit=crop',
       author: 'Sarah Johnson',
       date: '2024-01-20',
-      readTime: '5 min read'
+      readTime: '5 min read',
+      category: 'Electric Vehicles'
     },
     {
       id: '2',
       title: 'Luxury Car Rental: Experience Premium Comfort',
-      excerpt: 'Explore our premium luxury vehicle collection and exceptional service.',
-      image: 'https://images.unsplash.com/photo-1563720223185-11003d516935?w=400&h=300&fit=crop',
+      excerpt: 'Explore our premium luxury vehicle collection and learn what makes a truly exceptional rental experience.',
+      image: 'https://images.unsplash.com/photo-1563720223185-11003d516935?w=500&h=350&fit=crop',
       author: 'Michael Chen',
       date: '2024-01-18',
-      readTime: '4 min read'
+      readTime: '4 min read',
+      category: 'Luxury'
     },
     {
       id: '3',
       title: 'Road Trip Essentials: Planning Your Perfect Journey',
-      excerpt: 'Essential tips for planning the ultimate road trip adventure.',
-      image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop',
+      excerpt: 'Essential tips and tricks for planning the ultimate road trip adventure with your rental vehicle.',
+      image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500&h=350&fit=crop',
       author: 'Emma Rodriguez',
       date: '2024-01-15',
-      readTime: '6 min read'
+      readTime: '6 min read',
+      category: 'Travel Tips'
     },
     {
       id: '4',
       title: 'Motorcycle Adventures: Freedom on Two Wheels',
-      excerpt: 'Experience the thrill of motorcycle rentals and scenic routes.',
-      image: 'https://images.unsplash.com/photo-1609630875171-b1321377ee65?w=400&h=300&fit=crop',
+      excerpt: 'Experience the thrill of motorcycle rentals and discover scenic routes perfect for your next adventure.',
+      image: 'https://images.unsplash.com/photo-1609630875171-b1321377ee65?w=500&h=350&fit=crop',
       author: 'Jake Thompson',
       date: '2024-01-12',
-      readTime: '5 min read'
+      readTime: '5 min read',
+      category: 'Motorcycles'
     }
   ];
 
@@ -279,9 +314,11 @@ export default function Home() {
       </div>
 
       {/* Featured Vehicles */}
-      <div className="py-20 bg-white dark:bg-gray-900">
+      <div ref={featuredRef} className="py-20 bg-white dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <div className={`text-center mb-12 transition-all duration-1000 ${
+            featuredVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}>
             <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
               Featured Vehicles
             </h2>
@@ -291,16 +328,27 @@ export default function Home() {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {featuredVehicles.map((vehicle) => (
-              <VehicleCard
+            {featuredVehicles.map((vehicle, index) => (
+              <div
                 key={vehicle.id}
-                vehicle={vehicle}
-                isInWishlist={state.wishlist.includes(vehicle.id)}
-              />
+                className={`transition-all duration-1000 ${
+                  featuredVisible 
+                    ? 'opacity-100 translate-y-0' 
+                    : 'opacity-0 translate-y-10'
+                }`}
+                style={{ transitionDelay: `${index * 200}ms` }}
+              >
+                <VehicleCard
+                  vehicle={vehicle}
+                  isInWishlist={state.wishlist.includes(vehicle.id)}
+                />
+              </div>
             ))}
           </div>
           
-          <div className="text-center mt-12">
+          <div className={`text-center mt-12 transition-all duration-1000 ${
+            featuredVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`} style={{ transitionDelay: '1200ms' }}>
             <Link
               to="/vehicles"
               className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
@@ -312,10 +360,12 @@ export default function Home() {
       </div>
 
       {/* About Us Section */}
-      <div className="py-20 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-800 dark:to-gray-900">
+      <div ref={aboutRef} className="py-20 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-800 dark:to-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
+            <div className={`transition-all duration-1000 ${
+              aboutVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
+            }`}>
               <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-6">
                 About CarRental
               </h2>
@@ -323,31 +373,33 @@ export default function Home() {
                 We're revolutionizing the car rental industry by providing a seamless, technology-driven platform that connects vehicle owners with renters, creating value for both parties while promoting sustainable transportation.
               </p>
               <div className="grid grid-cols-2 gap-6 mb-8">
-                <div className="text-center">
+                <div className="text-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg">
                   <div className="text-3xl font-bold text-blue-600 mb-2">10K+</div>
                   <div className="text-gray-600 dark:text-gray-400">Happy Customers</div>
                 </div>
-                <div className="text-center">
+                <div className="text-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg">
                   <div className="text-3xl font-bold text-green-600 mb-2">500+</div>
                   <div className="text-gray-600 dark:text-gray-400">Vehicles Available</div>
                 </div>
-                <div className="text-center">
+                <div className="text-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg">
                   <div className="text-3xl font-bold text-purple-600 mb-2">50+</div>
                   <div className="text-gray-600 dark:text-gray-400">Cities Covered</div>
                 </div>
-                <div className="text-center">
+                <div className="text-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg">
                   <div className="text-3xl font-bold text-orange-600 mb-2">4.9★</div>
                   <div className="text-gray-600 dark:text-gray-400">Average Rating</div>
                 </div>
               </div>
               <Link
                 to="/about"
-                className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-300 font-semibold"
+                className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
               >
                 Learn More About Us
               </Link>
             </div>
-            <div className="relative">
+            <div className={`relative transition-all duration-1000 ${
+              aboutVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
+            }`} style={{ transitionDelay: '300ms' }}>
               <img
                 src="https://images.unsplash.com/photo-1556075798-4825dfaaf498?w=600&h=500&fit=crop"
                 alt="About CarRental"
@@ -370,9 +422,11 @@ export default function Home() {
       </div>
 
       {/* Customer Satisfaction Section */}
-      <div className="py-20 bg-white dark:bg-gray-900">
+      <div ref={testimonialsRef} className="py-20 bg-white dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <div className={`text-center mb-12 transition-all duration-1000 ${
+            testimonialsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}>
             <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
               What Our Customers Say
             </h2>
@@ -381,11 +435,13 @@ export default function Home() {
             </p>
           </div>
           
-          <div className="relative overflow-hidden">
+          <div className={`relative overflow-hidden transition-all duration-1000 ${
+            testimonialsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`} style={{ transitionDelay: '300ms' }}>
             <div className="flex transition-transform duration-500 ease-in-out" style={{ transform: `translateX(-${currentTestimonial * 100}%)` }}>
               {testimonials.map((testimonial) => (
                 <div key={testimonial.id} className="w-full flex-shrink-0 px-4">
-                  <div className="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-8 mx-auto max-w-4xl">
+                  <div className="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-8 mx-auto max-w-4xl shadow-xl">
                     <div className="flex items-center justify-center mb-6">
                       <div className="flex space-x-1">
                         {[...Array(testimonial.rating)].map((_, i) => (
@@ -400,7 +456,7 @@ export default function Home() {
                       <img
                         src={testimonial.avatar}
                         alt={testimonial.name}
-                        className="w-16 h-16 rounded-full mr-4"
+                        className="w-16 h-16 rounded-full mr-4 object-cover"
                       />
                       <div className="text-center">
                         <div className="font-semibold text-gray-900 dark:text-white">{testimonial.name}</div>
@@ -429,9 +485,11 @@ export default function Home() {
       </div>
 
       {/* Blog Section */}
-      <div className="py-20 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-800 dark:to-gray-900">
+      <div ref={blogRef} className="py-20 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-800 dark:to-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <div className={`text-center mb-12 transition-all duration-1000 ${
+            blogVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}>
             <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
               Latest from Our Blog
             </h2>
@@ -440,30 +498,41 @@ export default function Home() {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {blogPosts.map((post) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+            {blogPosts.map((post, index) => (
               <Link key={post.id} to={`/blog/${post.id}`} className="group">
-                <article className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                  <div className="relative overflow-hidden">
+                <article className={`bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 border border-gray-100 dark:border-gray-700 h-full ${
+                  blogVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                }`} style={{ transitionDelay: `${index * 200}ms` }}>
+                  <div className="relative overflow-hidden h-64">
                     <img
                       src={post.image}
                       alt={post.title}
-                      className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                    <span className="absolute top-4 left-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white text-xs font-bold px-3 py-1.5 rounded-full">
+                      {post.category}
+                    </span>
                   </div>
-                  <div className="p-6">
-                    <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3 leading-tight group-hover:text-blue-600 transition-colors duration-200">
+                  <div className="p-8">
+                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 leading-tight group-hover:text-blue-600 transition-colors duration-300">
                       {post.title}
                     </h3>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4 text-sm leading-relaxed">
+                    <p className="text-gray-600 dark:text-gray-400 mb-6 text-lg leading-relaxed">
                       {post.excerpt}
                     </p>
-                    <div className="flex items-center text-xs text-gray-500 dark:text-gray-400">
-                      <UserIcon className="h-3 w-3 mr-1" />
-                      <span className="mr-3">{post.author}</span>
-                      <ClockIcon className="h-3 w-3 mr-1" />
-                      <span>{post.readTime}</span>
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center text-sm text-gray-500 dark:text-gray-400">
+                        <UserIcon className="h-4 w-4 mr-1" />
+                        <span className="mr-4 font-medium">{post.author}</span>
+                        <ClockIcon className="h-4 w-4 mr-1" />
+                        <span>{post.readTime}</span>
+                      </div>
+                      <div className="inline-flex items-center text-blue-600 group-hover:text-blue-800 font-semibold transition-colors duration-200">
+                        Read More 
+                        <span className="ml-1 transform group-hover:translate-x-1 transition-transform duration-200">→</span>
+                      </div>
                     </div>
                   </div>
                 </article>
@@ -471,7 +540,9 @@ export default function Home() {
             ))}
           </div>
           
-          <div className="text-center mt-12">
+          <div className={`text-center mt-12 transition-all duration-1000 ${
+            blogVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`} style={{ transitionDelay: '800ms' }}>
             <Link
               to="/blog"
               className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
@@ -483,9 +554,11 @@ export default function Home() {
       </div>
 
       {/* Features Section */}
-      <div className="py-20 bg-white dark:bg-gray-900">
+      <div ref={featuresRef} className="py-20 bg-white dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <div className={`text-center mb-12 transition-all duration-1000 ${
+            featuresVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}>
             <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
               Why Choose Us?
             </h2>
@@ -495,41 +568,25 @@ export default function Home() {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
-            <div className="text-center group">
-              <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-2">
-                <span className="text-white text-3xl font-bold">24/7</span>
+            {[
+              { icon: '24/7', title: '24/7 Support', desc: 'Round-the-clock customer support for all your rental needs', gradient: 'from-blue-500 to-purple-600' },
+              { icon: '✓', title: 'Best Prices', desc: 'Competitive pricing with no hidden fees', gradient: 'from-green-500 to-teal-600' },
+              { icon: '★', title: 'Quality Fleet', desc: 'Well-maintained vehicles with latest features', gradient: 'from-purple-500 to-pink-600' }
+            ].map((feature, index) => (
+              <div key={index} className={`text-center group transition-all duration-1000 ${
+                featuresVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+              }`} style={{ transitionDelay: `${index * 200}ms` }}>
+                <div className={`w-20 h-20 bg-gradient-to-br ${feature.gradient} rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-2`}>
+                  <span className="text-white text-3xl font-bold">{feature.icon}</span>
+                </div>
+                <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
+                  {feature.title}
+                </h3>
+                <p className="text-gray-600 dark:text-gray-400 text-lg">
+                  {feature.desc}
+                </p>
               </div>
-              <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
-                24/7 Support
-              </h3>
-              <p className="text-gray-600 dark:text-gray-400 text-lg">
-                Round-the-clock customer support for all your rental needs
-              </p>
-            </div>
-            
-            <div className="text-center group">
-              <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-teal-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-2">
-                <span className="text-white text-3xl">✓</span>
-              </div>
-              <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
-                Best Prices
-              </h3>
-              <p className="text-gray-600 dark:text-gray-400 text-lg">
-                Competitive pricing with no hidden fees
-              </p>
-            </div>
-            
-            <div className="text-center group">
-              <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-2">
-                <span className="text-white text-3xl">★</span>
-              </div>
-              <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
-                Quality Fleet
-              </h3>
-              <p className="text-gray-600 dark:text-gray-400 text-lg">
-                Well-maintained vehicles with latest features
-              </p>
-            </div>
+            ))}
           </div>
         </div>
       </div>
