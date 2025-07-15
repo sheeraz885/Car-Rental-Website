@@ -18,136 +18,159 @@ interface BlogPost {
 const blogPosts: BlogPost[] = [
   {
     id: '1',
-    title: 'The Ultimate Guide to Car Rental in 2024',
-    excerpt: 'Everything you need to know about renting a car in the modern era, from booking tips to insurance coverage.',
+    title: 'The Future of Electric Vehicle Rentals',
+    excerpt: 'Discover how electric vehicles are revolutionizing the car rental industry with sustainable transportation solutions.',
     content: `
-      <h2>Introduction</h2>
-      <p>Car rental has evolved significantly in recent years, with new technologies, changing consumer preferences, and innovative business models reshaping the industry. Whether you're planning a vacation, need a temporary replacement vehicle, or require transportation for business travel, understanding the modern car rental landscape is essential for making informed decisions.</p>
+      <h2>Introduction to Electric Vehicle Rentals</h2>
+      <p>The automotive industry is experiencing a revolutionary shift towards electric vehicles (EVs), and the car rental sector is at the forefront of this transformation. Electric vehicle rentals are becoming increasingly popular as consumers become more environmentally conscious and seek sustainable transportation options.</p>
       
-      <h2>Choosing the Right Rental Company</h2>
-      <p>The car rental market offers numerous options, from traditional giants like Hertz and Avis to newer players like Turo and Zipcar. Each has its advantages:</p>
+      <h2>Benefits of Electric Vehicle Rentals</h2>
+      <p>Electric vehicles offer numerous advantages for rental customers:</p>
       <ul>
-        <li><strong>Traditional Companies:</strong> Extensive networks, established processes, and comprehensive insurance options</li>
-        <li><strong>Peer-to-Peer Platforms:</strong> Unique vehicles, competitive pricing, and local experiences</li>
-        <li><strong>App-Based Services:</strong> Convenience, digital-first experience, and flexible rental periods</li>
+        <li><strong>Environmental Impact:</strong> Zero direct emissions contribute to cleaner air quality</li>
+        <li><strong>Cost Efficiency:</strong> Lower operating costs due to reduced fuel expenses</li>
+        <li><strong>Advanced Technology:</strong> Cutting-edge features and infotainment systems</li>
+        <li><strong>Quiet Operation:</strong> Peaceful driving experience with minimal noise</li>
+        <li><strong>Instant Torque:</strong> Immediate acceleration and responsive performance</li>
       </ul>
       
-      <h2>Booking Tips for 2024</h2>
-      <p>To get the best deals and ensure availability:</p>
-      <ul>
-        <li>Book in advance, especially during peak travel seasons</li>
-        <li>Compare prices across multiple platforms</li>
-        <li>Consider membership programs for frequent renters</li>
-        <li>Be flexible with pickup locations and times</li>
-        <li>Read the fine print regarding fuel policies and mileage limits</li>
-      </ul>
+      <h2>Charging Infrastructure Development</h2>
+      <p>The expansion of charging networks worldwide is making electric vehicle rentals more practical and convenient. Major cities are investing heavily in fast-charging stations, making long-distance travel with EVs increasingly feasible.</p>
       
-      <h2>Insurance Considerations</h2>
-      <p>Understanding insurance options is crucial for protecting yourself and your finances. Most rental companies offer several types of coverage, and you may already have protection through your personal auto insurance or credit card benefits.</p>
-      
-      <h2>Conclusion</h2>
-      <p>The car rental industry continues to evolve, offering more choices and flexibility than ever before. By staying informed about the latest trends and best practices, you can ensure a smooth and cost-effective rental experience.</p>
+      <h2>Future Outlook</h2>
+      <p>As battery technology continues to improve and charging infrastructure expands, electric vehicle rentals will become the standard rather than the exception. The future of transportation is electric, and rental companies are leading the charge.</p>
     `,
-    author: 'John Smith',
-    date: '2024-01-15',
+    author: 'Sarah Johnson',
+    date: '2024-01-20',
     readTime: '5 min read',
-    category: 'Travel Tips',
-    image: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800&h=600&fit=crop',
+    category: 'Electric Vehicles',
+    image: 'https://images.unsplash.com/photo-1593941707882-a5bac6861d75?w=800&h=600&fit=crop',
     featured: true
   },
   {
     id: '2',
-    title: 'Electric vs. Gasoline Cars: Which Should You Rent?',
-    excerpt: 'Compare the benefits and drawbacks of electric and gasoline rental cars to make the best choice for your trip.',
+    title: 'Luxury Car Rental: Experience Premium Comfort',
+    excerpt: 'Explore our premium luxury vehicle collection and learn what makes a truly exceptional rental experience.',
     content: `
-      <h2>The Electric Revolution in Car Rentals</h2>
-      <p>Electric vehicles (EVs) are becoming increasingly common in rental fleets, offering a glimpse into the future of transportation. But are they right for your next trip?</p>
+      <h2>The World of Luxury Car Rentals</h2>
+      <p>Luxury car rentals offer an unparalleled driving experience that combines comfort, performance, and prestige. Whether for special occasions, business travel, or simply treating yourself, luxury vehicles provide an elevated transportation experience.</p>
       
-      <h2>Advantages of Electric Rentals</h2>
+      <h2>Premium Features and Amenities</h2>
       <ul>
-        <li><strong>Environmental Impact:</strong> Zero direct emissions and reduced carbon footprint</li>
-        <li><strong>Cost Savings:</strong> Lower fuel costs and potential toll/parking discounts</li>
-        <li><strong>Quiet Operation:</strong> Peaceful driving experience</li>
-        <li><strong>Instant Torque:</strong> Smooth acceleration and responsive performance</li>
-        <li><strong>Technology Features:</strong> Advanced infotainment and driver assistance systems</li>
+        <li><strong>Superior Comfort:</strong> Premium leather seating and climate control</li>
+        <li><strong>Advanced Technology:</strong> State-of-the-art infotainment and safety systems</li>
+        <li><strong>Exceptional Performance:</strong> Powerful engines and refined handling</li>
+        <li><strong>Prestigious Brands:</strong> Mercedes-Benz, BMW, Audi, and more</li>
       </ul>
       
-      <h2>Considerations for Electric Vehicles</h2>
-      <ul>
-        <li><strong>Range Limitations:</strong> Plan routes around charging infrastructure</li>
-        <li><strong>Charging Time:</strong> Longer refueling stops compared to gas stations</li>
-        <li><strong>Availability:</strong> Limited selection in some markets</li>
-        <li><strong>Learning Curve:</strong> Different driving and charging procedures</li>
-      </ul>
-      
-      <h2>When to Choose Gasoline</h2>
-      <p>Traditional gasoline vehicles remain the better choice for:</p>
-      <ul>
-        <li>Long-distance road trips</li>
-        <li>Rural areas with limited charging infrastructure</li>
-        <li>Travelers unfamiliar with EV technology</li>
-        <li>Situations requiring maximum flexibility</li>
-      </ul>
-      
-      <h2>Making Your Decision</h2>
-      <p>Consider your specific travel needs, destination, and comfort level with new technology when choosing between electric and gasoline rental vehicles.</p>
+      <h2>When to Choose Luxury</h2>
+      <p>Luxury car rentals are perfect for special occasions, important business meetings, or when you want to make a lasting impression. The investment in a premium vehicle often pays dividends in comfort and confidence.</p>
     `,
-    author: 'Sarah Johnson',
-    date: '2024-01-12',
+    author: 'Michael Chen',
+    date: '2024-01-18',
     readTime: '4 min read',
-    category: 'Car Comparison',
-    image: 'https://images.unsplash.com/photo-1617788138017-80ad40651399?w=800&h=600&fit=crop'
+    category: 'Luxury',
+    image: 'https://images.unsplash.com/photo-1563720223185-11003d516935?w=800&h=600&fit=crop'
   },
   {
     id: '3',
-    title: 'Top 10 Road Trip Destinations for 2024',
-    excerpt: 'Discover the most scenic and exciting road trip destinations that are perfect for your next rental car adventure.',
+    title: 'Road Trip Essentials: Planning Your Perfect Journey',
+    excerpt: 'Essential tips and tricks for planning the ultimate road trip adventure with your rental vehicle.',
     content: `
-      <h2>Planning Your Perfect Road Trip</h2>
-      <p>Road trips offer the ultimate freedom to explore at your own pace. Here are the top destinations that promise unforgettable experiences.</p>
+      <h2>Planning the Perfect Road Trip</h2>
+      <p>Road trips offer the ultimate freedom to explore at your own pace. With proper planning and the right rental vehicle, your journey can be as memorable as your destination.</p>
       
-      <h2>Top Destinations</h2>
+      <h2>Essential Planning Steps</h2>
       <ul>
-        <li><strong>Pacific Coast Highway, California:</strong> Stunning coastal views and charming seaside towns</li>
-        <li><strong>Blue Ridge Parkway, Virginia/North Carolina:</strong> Spectacular mountain scenery and fall foliage</li>
-        <li><strong>Route 66:</strong> The classic American road trip experience</li>
-        <li><strong>Great Ocean Road, Australia:</strong> Dramatic coastline and unique rock formations</li>
-        <li><strong>Ring Road, Iceland:</strong> Otherworldly landscapes and natural wonders</li>
+        <li><strong>Route Planning:</strong> Map out your journey with interesting stops</li>
+        <li><strong>Vehicle Selection:</strong> Choose a comfortable car for long distances</li>
+        <li><strong>Accommodation:</strong> Book hotels or plan camping spots in advance</li>
+        <li><strong>Emergency Kit:</strong> Pack essentials for unexpected situations</li>
       </ul>
       
-      <h2>Planning Tips</h2>
-      <p>Make the most of your road trip with proper planning and preparation.</p>
+      <h2>Making the Most of Your Journey</h2>
+      <p>The key to a successful road trip is flexibility. While planning is important, leave room for spontaneous discoveries and unexpected adventures along the way.</p>
     `,
-    author: 'Mike Davis',
-    date: '2024-01-10',
+    author: 'Emma Rodriguez',
+    date: '2024-01-15',
     readTime: '6 min read',
-    category: 'Travel',
+    category: 'Travel Tips',
     image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop'
   },
   {
     id: '4',
-    title: 'How to Save Money on Car Rentals',
-    excerpt: 'Practical tips and strategies to get the best deals on car rentals without compromising on quality.',
+    title: 'Motorcycle Adventures: Freedom on Two Wheels',
+    excerpt: 'Experience the thrill of motorcycle rentals and discover scenic routes perfect for your next adventure.',
     content: `
-      <h2>Smart Booking Strategies</h2>
-      <p>Saving money on car rentals doesn't mean sacrificing quality. Here are proven strategies to get the best deals.</p>
+      <h2>The Thrill of Motorcycle Rentals</h2>
+      <p>Motorcycle rentals offer an unmatched sense of freedom and adventure. Whether you're exploring winding mountain roads or cruising coastal highways, motorcycles provide an intimate connection with the journey.</p>
       
-      <h2>Timing is Everything</h2>
+      <h2>Safety First</h2>
       <ul>
-        <li>Book in advance for better rates</li>
-        <li>Avoid peak travel seasons when possible</li>
-        <li>Consider weekday vs weekend pricing</li>
-        <li>Be flexible with pickup and drop-off times</li>
+        <li><strong>Protective Gear:</strong> Always wear appropriate safety equipment</li>
+        <li><strong>License Requirements:</strong> Ensure you have proper motorcycle endorsement</li>
+        <li><strong>Weather Awareness:</strong> Check conditions before riding</li>
+        <li><strong>Route Planning:</strong> Choose motorcycle-friendly roads</li>
       </ul>
       
-      <h2>Comparison Shopping</h2>
-      <p>Use multiple platforms to compare prices and find hidden deals.</p>
+      <h2>Best Motorcycle Routes</h2>
+      <p>From scenic coastal highways to mountain passes, certain routes are particularly well-suited for motorcycle adventures. Research local recommendations and connect with riding communities for insider tips.</p>
     `,
-    author: 'Emily Chen',
-    date: '2024-01-08',
-    readTime: '3 min read',
+    author: 'Jake Thompson',
+    date: '2024-01-12',
+    readTime: '5 min read',
+    category: 'Motorcycles',
+    image: 'https://images.unsplash.com/photo-1609630875171-b1321377ee65?w=800&h=600&fit=crop'
+  },
+  {
+    id: '5',
+    title: 'Smart Booking: How to Save on Car Rentals',
+    excerpt: 'Learn insider tips and strategies to get the best deals on car rentals without compromising quality.',
+    content: `
+      <h2>Maximizing Your Rental Savings</h2>
+      <p>Car rental costs can vary significantly based on timing, location, and booking strategies. With the right approach, you can secure excellent vehicles at competitive prices.</p>
+      
+      <h2>Money-Saving Strategies</h2>
+      <ul>
+        <li><strong>Book in Advance:</strong> Early bookings often secure better rates</li>
+        <li><strong>Compare Platforms:</strong> Use multiple sites to find the best deals</li>
+        <li><strong>Flexible Dates:</strong> Adjust travel dates for better pricing</li>
+        <li><strong>Membership Programs:</strong> Join loyalty programs for exclusive discounts</li>
+      </ul>
+      
+      <h2>Hidden Costs to Avoid</h2>
+      <p>Be aware of additional fees such as insurance, fuel charges, and late return penalties. Understanding the total cost upfront helps you make informed decisions and avoid surprises.</p>
+    `,
+    author: 'Lisa Park',
+    date: '2024-01-10',
+    readTime: '4 min read',
     category: 'Money Saving',
     image: 'https://images.unsplash.com/photo-1579952363873-27d3bfad9c0d?w=800&h=600&fit=crop'
+  },
+  {
+    id: '6',
+    title: 'City vs Highway: Choosing the Right Vehicle',
+    excerpt: 'Understand which vehicle type suits your driving needs best, whether for city commuting or highway cruising.',
+    content: `
+      <h2>Matching Vehicles to Your Needs</h2>
+      <p>Different driving environments require different vehicle characteristics. Understanding these differences helps you choose the perfect rental for your specific journey.</p>
+      
+      <h2>City Driving Considerations</h2>
+      <ul>
+        <li><strong>Compact Size:</strong> Easier parking and maneuvering</li>
+        <li><strong>Fuel Efficiency:</strong> Better mileage in stop-and-go traffic</li>
+        <li><strong>Visibility:</strong> Good sight lines for urban navigation</li>
+        <li><strong>Technology:</strong> GPS and parking assistance features</li>
+      </ul>
+      
+      <h2>Highway Travel Requirements</h2>
+      <p>For long-distance highway travel, prioritize comfort, stability, and performance. Larger vehicles with powerful engines and comfortable seating make highway miles more enjoyable.</p>
+    `,
+    author: 'David Wilson',
+    date: '2024-01-08',
+    readTime: '3 min read',
+    category: 'Vehicle Guide',
+    image: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=800&h=600&fit=crop'
   }
 ];
 
@@ -236,7 +259,7 @@ export default function BlogPost() {
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Related Articles</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {blogPosts
-              .filter(p => p.id !== post.id && p.category === post.category)
+              .filter(p => p.id !== post.id)
               .slice(0, 2)
               .map((relatedPost) => (
                 <div key={relatedPost.id} className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
